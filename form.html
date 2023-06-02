@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Registration and login form </title>
+    <link rel="stylesheet" href="styles.css">
+ <script src="scripts/main.js" defer></script>
+</head> 
+<style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+.hero{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    background-image: none;
+    background-size: cover;
+    position: absolute;
+}
+    .form-box{ 
+        width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background-color: whitesmoke;
+    padding: 5px;
+    overflow: hidden!important ;
+    }
+    .button-box{
+width: 220px;
+margin: 35px auto;
+position: relative;
+box-shadow: 0 0 20px 9px black;
+  border-radius:30px ; 
+}
+.togger-Btn{
+ padding: 10px 30px; 
+ cursor: pointer; 
+border: 0;
+outline: none;
+position: relative;
+
+}
+login-btn {
+    top: 0;
+    left: 0;
+    position:absolute ;
+    width: 100px;
+    height: 100%;
+    background:linear-gradient(to right, #6b52db,#fff) !important;
+border-radius: 30px !important;
+transition: .5s;
+}
+ .login-btn {
+  padding: 10px 14px;
+  
+}
+ .input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+outline: none;
+background: transparent;
+}
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background:linear-gradient(to right, #f10,#6b52db);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+@media screen and (max-width: 300px) {
+  .loginbtn, .signupbtn {
+     width: 100%;
+  }
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 12px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+button {
+  background-color: #5c3bb8;
+  color: white;
+  padding: 10px 14px;
+  margin: 6px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+.cancelbtn {
+  padding: 10px 14px;
+  background-color: #ec1e10;
+}
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 30%;
+}
+.container {
+  padding: 10px;
+}
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height:100%; 
+  overflow: auto; 
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; 
+  border: 1px solid #888;
+  width: 50%; 
+}
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.close {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+ </style>   
+<body> 
+    <div class="hero">
+    <div class="form-box">
+        <div class="button box">
+            <div id="loginBtn"></div>
+				
+				<button onclick="ShowLoginForm()"  id="ShowLoginBtn" class="active">Login</button>
+			</div>
+        <form  id="login" >
+            <input type="text"
+             class="input-field" placeholder="user id" required>
+              <input type="email adress"
+             class="input-field" placeholder=" Enter Email address" required>
+             <input type="text"
+             class="input-field" placeholder="Enter password" required>
+              <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"  color: #777;> Remember me
+          </label>
+          <a href="password id"> forgot password?</a>
+             <button type="submit" class="submit-btn"> login</button>
+             <p>Don't have an account Yet?Sign up</p><br>
+        </form>
+         
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+    
+    <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content" action="/action_page.php">
+        <div class="container">
+          <h4>Sign Up</h4>
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+    
+          <label for="psw-repeat"><b>confirm Password</b></label>
+          <input type="password" placeholder="confirm Password" name="psw-repeat" required>
+          
+          <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+          </label>
+    
+          <p>By creating an account you agree to our <a href="checkout ourlegalterms" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    
+          <div class="clearfix">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    </div>
+    <script>
+      var x =document.getElementById("login")
+      var y =document.getElementById("signup")
+      var z =document.getElementById("btn")
+     
+    </script>
+</body>
+</html>
